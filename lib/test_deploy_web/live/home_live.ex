@@ -39,7 +39,7 @@ defmodule TestDeployWeb.HomeLive do
 
         <div class="card bg-base-100 shadow-xl mb-8">
           <div class="card-body">
-            <h2 class="card-title">Database Info</h2>
+            <h2 class="card-title">Database Info (PREVIEW CHANGE)</h2>
             <p><strong>Path:</strong> <%= @db_path %></p>
             <p><strong>Items count:</strong> <%= length(@items) %></p>
           </div>
