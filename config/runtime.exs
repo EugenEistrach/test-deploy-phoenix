@@ -47,7 +47,12 @@ if config_env() == :prod do
       You can generate one by calling: mix phx.gen.secret
       """
 
-  host = System.get_env("PHX_HOST") || "example.com"
+  # For previews, use DOKPLOY_DEPLOY_URL as the host
+  host =
+    case System.get_env("DOKPLOY_DEPLOY_URL") do
+      nil -> System.get_env("PHX_HOST") || "example.com"
+      url -> url
+    end
 
   config :test_deploy, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
