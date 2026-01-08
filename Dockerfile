@@ -1,9 +1,6 @@
-ARG ELIXIR_VERSION=1.17.3
-ARG OTP_VERSION=27.2
-ARG DEBIAN_VERSION=bookworm-20241016-slim
-
-ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
-ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
+# Use a known-good image tag
+ARG BUILDER_IMAGE="hexpm/elixir:1.17.1-erlang-27.1.1-debian-bookworm-20251229"
+ARG RUNNER_IMAGE="debian:bookworm-slim"
 
 FROM ${BUILDER_IMAGE} AS build
 
